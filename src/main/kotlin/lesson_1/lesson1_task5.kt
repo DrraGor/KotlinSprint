@@ -1,6 +1,4 @@
 package lesson_1
-
-
 fun main(){
 
     val flightInSeconds = 6480
