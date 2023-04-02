@@ -5,7 +5,7 @@ fun main(){
     val ironOre = 11
 
     fun baf(ore: Int):Int {
-        return (ore * 1.2 - ore).toInt()
+        return (ore * 0.2).toInt()
     }
     println("Cristal ore with the baf ${baf(cristalOre)}")
     println("Iron ore with the baf ${baf(ironOre)}")
