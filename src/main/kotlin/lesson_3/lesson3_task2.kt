@@ -8,6 +8,7 @@ fun main() {
     val patronymic = "Сергеевна"
     val marriageAge = 22
     val age = 20
+
     println("$maidenLastName $firstName $patronymic, $age")
     println("$lastName $firstName $patronymic, $marriageAge")
 
