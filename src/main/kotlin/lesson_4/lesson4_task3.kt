@@ -7,6 +7,8 @@ fun main() {
     val humidity = 20
     val season = "Зима"
 
-    println("Благоприятные ли условия сейчас для роста бобовых? ${sunnyWeather == true && openedTent == true && humidity == 20 && season != "Зима"}")
+    val growingConditions = sunnyWeather && openedTent && humidity == 20 && season != "Зима"
+
+    println("Благоприятные ли условия сейчас для роста бобовых? $growingConditions")
 
 }
