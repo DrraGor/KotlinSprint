@@ -1,18 +1,16 @@
 package lesson_5
 
-import java.util.Scanner
-
+const val VERIFICATION_NUMBER = 10
 fun main() {
     println(
         """
         Для авторизации пройдите пожалуйста проверку
-        Сложите пожалуйста два числа 7 и 3, ответ надо ввести в консоль:        
+        Сложите два числа 7 и 3, ответ надо ввести в консоль:        
         """.trimIndent()
     )
 
-    val scanner = Scanner(System.`in`)
-    val result = scanner.nextInt()
+     val result = readln().toInt()
 
-    if (result == 10) println("Добро пожалвать!") else println("Доступ запрещён")
+    if (result == VERIFICATION_NUMBER) println("Добро пожаловать!") else println("Доступ запрещён")
 
 }
