@@ -3,6 +3,7 @@ package lesson_5
 const val USER_LOGIN = "Batman"
 const val USER_PASSWORD = "password"
 
+
 fun main() {
     println("Введите логин:")
     val userLogin = readln()
