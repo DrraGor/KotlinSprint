@@ -6,10 +6,10 @@ fun main() {
     val trainingPossibility = trainingDay % 2 == 0
     println(
         """
-              |Упражнения для рук:    ${trainingPossibility != true}
-			  |Упражнения для ног:    ${trainingPossibility == true}
-              |Упражнения для спины:  ${trainingPossibility == true}
-			  |Упражнения для пресса: ${trainingPossibility != true}
+              |Упражнения для рук:    ${!trainingPossibility}
+			  |Упражнения для ног:    $trainingPossibility
+              |Упражнения для спины:  $trainingPossibility
+			  |Упражнения для пресса: ${!trainingPossibility}
 		  """.trimMargin()
     )
 }
