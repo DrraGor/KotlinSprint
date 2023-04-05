@@ -3,8 +3,6 @@ package lesson_5
 const val USER_LOGIN_KS5_4 = "Batman"
 const val USER_PASSWORD_KS5_4 = "password"
 
-
-
 fun main() {
     println("Введите логин:")
     val userLogin = readln()
