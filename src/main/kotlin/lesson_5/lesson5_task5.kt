@@ -1,5 +1,4 @@
 package lesson_5
-
 import kotlin.random.Random
 
 val FIRST_NUMBER = Random(System.nanoTime()).nextInt(1, 100)
