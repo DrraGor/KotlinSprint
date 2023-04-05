@@ -3,7 +3,6 @@ import kotlin.random.Random
 
 val FIRST_NUMBER_KS5 = Random(System.nanoTime()).nextInt(1, 100)
 val SECOND_NUMBER_KS5 = Random(System.nanoTime()).nextInt(1, 100)
-
 fun main() {
     println(
         """ 
