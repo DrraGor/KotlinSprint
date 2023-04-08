@@ -1,7 +1,9 @@
 package lesson_6
 
 fun main() {
+
     var successfulRegistration = false
+
     println("Для регистрации введите логин:")
 
     val userLogin = readln()
@@ -10,19 +12,14 @@ fun main() {
 
     val userPassword = readln()
 
-    println("""
-        Поздравляем, регистрация прошла успешно
+    println(
+        """
+        Поздравляем, регистрация прошла успешно,
         для входа введите логин
-        """.trimIndent())
+        """.trimIndent()
+    )
 
     if (readln() == userLogin) {
-        println("Введите пароль")
-
-        if (readln() == userPassword) {
-            println("Авторизация прошла успешно")
-            successfulRegistration = true
-
-        } else println("Неправильный пароль")
 
         while (!successfulRegistration) {
             println("Введите пароль")
