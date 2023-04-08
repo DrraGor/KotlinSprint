@@ -2,7 +2,7 @@ package lesson_6
 
 fun main() {
     println("Введите количество секунд которые нужно отсчитать:")
-    val countTime = readLine()!!.toInt()
+    val countTime = readLine()?.toInt() ?: 0
     var counter = 1
 
     while (counter < countTime) {
