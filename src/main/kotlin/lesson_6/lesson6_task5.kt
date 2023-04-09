@@ -1,16 +1,14 @@
 package lesson_6
 
-import kotlin.random.Random
-
 fun main() {
     var counter = 0
     var rightDecision = false
     println("Для авторизации пройдите пожалуйста проверку")
+    val numbers = setOf<Int>(1,2,3,4,5,6,7,8,9)
 
     while (counter < 3) {
-
-        val firstNumber = Random(System.nanoTime()).nextInt(1, 9)
-        val secondNumber = Random(System.nanoTime()).nextInt(1, 9)
+        val firstNumber = numbers.random()
+        val secondNumber = numbers.random()
 
         println(
             """
