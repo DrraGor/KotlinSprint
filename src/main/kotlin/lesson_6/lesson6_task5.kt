@@ -4,11 +4,10 @@ fun main() {
     var counter = 0
     var rightDecision = false
     println("Для авторизации пройдите пожалуйста проверку")
-    val numbers = setOf<Int>(1,2,3,4,5,6,7,8,9)
 
     while (counter < 3) {
-        val firstNumber = numbers.random()
-        val secondNumber = numbers.random()
+        val firstNumber = (1..9).random()
+        val secondNumber = (1..9).random()
 
         println(
             """
