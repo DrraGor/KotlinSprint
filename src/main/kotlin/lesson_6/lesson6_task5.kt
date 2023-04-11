@@ -10,9 +10,7 @@ fun main() {
         val secondNumber = (1..9).random()
 
         println(
-            """
-            Сложите два числа $firstNumber и $secondNumber, ответ надо ввести в консоль:        
-            """.trimIndent()
+            "Сложите два числа $firstNumber и $secondNumber, ответ надо ввести в консоль:"
         )
         if (readln().toInt() == firstNumber + secondNumber) {
             rightDecision = true
