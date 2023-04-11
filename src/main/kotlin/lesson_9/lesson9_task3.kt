@@ -2,22 +2,19 @@ package lesson_9
 
 fun main() {
 
-    val arrayOfIngredients: MutableList<String> = MutableList(51) { "" }
-    arrayOfIngredients[2] = "яиц"
-    arrayOfIngredients[50] = "молока"
-    arrayOfIngredients[15] = "сливочного масла"
+    val arrayOfIngredients = mutableListOf(2,50,15)
 
     println("Сколько порций омлета вы хотите приготовить?")
     val portions = readln().toInt()
-
+    val ingredientsOnPortions = arrayOfIngredients.map {
+        it * portions
+    }
 
     println(
-        "На $portions порций вам понадобится: яиц – ${arrayOfIngredients.indexOf("яиц") * portions}, молока – ${
-            arrayOfIngredients.indexOf("молока") * portions
-        }, сливочного масла – ${arrayOfIngredients.indexOf("сливочного масла") * portions}"
+        "На $portions порций вам понадобится: яиц – ${ingredientsOnPortions[0]}, молока – ${ingredientsOnPortions[1]
+                    }, сливочного масла – ${ingredientsOnPortions[2]}"
     )
-    arrayOfIngredients.add(readln())
-    arrayOfIngredients.forEach { println(it) }
+     ingredientsOnPortions.forEach { println(it) }
 
 }
 
