@@ -6,10 +6,10 @@ fun main() {
     arrayOfIngredients.forEach { println(it) }
     println("В рецепте есть базовые ингредиенты:$arrayOfIngredients")
     println("Желаете добавить ещё?")
-    if (readln() == "Да") {
+    if (readln().lowercase() == "да") {
         println("Какой ингредиент вы хотите добавить?")
         arrayOfIngredients.add(readln())
         println("Теперь в рецепте есть следующие ингредиенты:$arrayOfIngredients")
-    } else println()
+    } else return
 }
 
