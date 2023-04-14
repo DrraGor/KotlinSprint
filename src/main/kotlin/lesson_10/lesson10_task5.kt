@@ -2,24 +2,23 @@ package lesson_10
 
 fun main() {
 
-    val userLogin = loginChecker()
-    val userPassword = paroleGenerator()
+    val userLogin = checkLoginLength()
+    val userPassword = generateParole()
     while (true) {
 
         println("Введите логин")
         if (readln() == userLogin) {
             println("Введите пароль")
             if (readln() == userPassword) {
-                verificationCodeChecker()
+                checkVerificationCode()
                 println("Поздравляем, авторизация прошла успешно")
                 break
             } else println("Неправильный пароль")
         } else println("Неправильный логин")
     }
-
 }
 
-fun verificationCodeChecker() {
+fun checkVerificationCode() {
 
     do {
         var checkCode = (1000..9999).random()
@@ -34,7 +33,7 @@ fun verificationCodeChecker() {
     } while (readln().toInt() != checkCode)
 }
 
-fun paroleGenerator(): String {
+fun generateParole(): String {
     val lettersSet = ('a'..'z')
     val capitalLettersSet = ('A'..'Z')
     val numbersSet = (0..9)
@@ -48,7 +47,7 @@ fun paroleGenerator(): String {
     return generatedPassword
 }
 
-fun loginChecker(): String {
+fun checkLoginLength(): String {
     var userLogin: String
     do {
         println("Для регистрации введите логин:")
