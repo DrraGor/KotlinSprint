@@ -1,13 +1,18 @@
 package lesson_10
+
 fun main() {
 
     println("Введите логин")
-    val userLogin = readln()
-    println("Введите пароль")
-    val userPassword = readln()
-    lengthChecker(userLogin, userPassword)
+    val login = readln()
+
+    if (checkLength(login)) {
+        println("Введите пароль")
+        val pass = readln()
+        if (checkLength(pass)) println("Регистрация прошла успешно")
+        else println("Пароль недостаточно длинный")
+    } else println("Логин недостаточно длинный")
 }
-fun lengthChecker(incomeLogin: String, incomePassword: String) {
-    if (incomeLogin.length >= 4 && incomePassword.length >= 4) println("Регистрация прошла успешно")
-    else println("Логин или пароль недостаточно длинные")
+
+fun checkLength(income: String): Boolean {
+    return income.length >= 4
 }
