@@ -1,9 +1,7 @@
 package lesson_5
 
-import kotlin.random.Random
-
-val FIRST_NUMBER_KS5 = Random(System.nanoTime()).nextInt(1, 100)
-val SECOND_NUMBER_KS5 = Random(System.nanoTime()).nextInt(1, 100)
+val FIRST_NUMBER_KS5 = (1..100).random()
+val SECOND_NUMBER_KS5 = (1..100).random()
 fun main() {
     println(
         """ 
