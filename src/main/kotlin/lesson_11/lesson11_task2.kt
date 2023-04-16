@@ -6,14 +6,13 @@ fun main() {
     userOne.addBio()
     userOne.passwordChanger()
     userOne.printUserInfo()
-    println(userOne.bio)
+    println(userOne._bio)
     userOne.printUserText("${userOne._login} приветствую тебя!")
 
 }
 
-class User(val _id: Int, val _login: String, var _password: String, val _mail: String) {
+class User(private val _id: Int, val _login: String, private var _password: String, private val _mail: String, var _bio: String = "") {
 
-    lateinit var bio: String
     init {
         println("Пользователь $_login создан")
     }
@@ -24,7 +23,7 @@ class User(val _id: Int, val _login: String, var _password: String, val _mail: S
 
     fun addBio() {
         println("Введите описание пользователя")
-        bio = readln()
+        _bio = readln()
     }
 
     fun passwordChanger() {
@@ -40,7 +39,7 @@ class User(val _id: Int, val _login: String, var _password: String, val _mail: S
         } while (!passwordWasChanged)
     }
 
-    fun printUserText(incomeText: String){
+    fun printUserText(incomeText: String) {
         println(incomeText)
     }
 
