@@ -16,18 +16,21 @@ fun main() {
     roomsLent.forEach { it.printRoomInfo() }
 
 }
-    //Это герератор пользователей
+
+//Это герератор пользователей
 fun generateUser(): ChatUser {
     val names = listOf("Степан", "Пётр", "Илья", "Ольга", "Екатерина", "Анастасия")
     return ChatUser((1..50).random(), names.random())
 }
 
-class Room(private val _cover: String, private val _nameOfRoom: String) {
-
-    private var participantList = mutableListOf<ChatUser>()
+class Room(
+    private val _cover: String,
+    private val _nameOfRoom: String,
+    private var _participantList: MutableList<ChatUser> = mutableListOf(),
+) {
 
     fun addUser(user: ChatUser) {
-        participantList.add(user)
+        _participantList.add(user)
     }
 
     fun printRoomInfo() {
@@ -36,18 +39,17 @@ class Room(private val _cover: String, private val _nameOfRoom: String) {
     }
 
     private fun showUsers() {
-        participantList.forEach { it.printUserInfo() }
+        _participantList.forEach { it.printUserInfo() }
     }
 
 }
 
 class ChatUser(private val _avatar: Int, private val _nickname: String) {
 
-    private val status = listOf("разговаривает", "микрофон выключен", "пользователь заглушен")
-    private val userStatus = status.random()
+    private val userStatus = listOf("разговаривает", "микрофон выключен", "пользователь заглушен").random()
 
     fun printUserInfo() {
-        println("              Аватар-$_avatar, никнейм - $_nickname, статус - $userStatus,")
+        println("              Аватар-$_avatar, никнейм - $_nickname, статус - $userStatus")
     }
 
 
