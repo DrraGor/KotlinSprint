@@ -1,5 +1,4 @@
 package lesson_5
-
 fun main() {
     val firstNumber = (1..100).random()
     val secondNumber = (1..100).random()
