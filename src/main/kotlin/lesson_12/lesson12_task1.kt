@@ -19,18 +19,23 @@ fun main() {
     weatherTrackerTwo.printInfo("weatherTrackerTwo")
 }
 
-class  WeatherTrack {
+class WeatherTrack {
     var dayTimeTemperature = 23
     var nightTimeTemperature = 15
     var happenedRain = false
     var atmosphericPressure = 769
 
-    fun printInfo(name: String){
-        println("""        
- Объект $name: Дневная температура - $dayTimeTemperature 
-                           Ночная температура - $nightTimeTemperature
-                           Дождь - $happenedRain
-                           Атмосферное давление - $atmosphericPressure        
-        """)}
+    fun printInfo(name: String) {
+        println(
+            """
+                Объект $name: Дневная температура - $dayTimeTemperature 
+                Ночная температура - $nightTimeTemperature
+                Дождь - $happenedRain
+                Атмосферное давление - $atmosphericPressure
+                 
+                """
+                .trimIndent()
+        )
+    }
 
 }
