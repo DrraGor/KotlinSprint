@@ -3,10 +3,6 @@ package lesson_12
 import kotlin.random.Random.Default.nextBoolean
 
 fun main() {
-    makeStatistic()
-}
-
-fun makeStatistic() {
     val weatherTrackersList = mutableListOf<DayWeatherTrackerKS5>()
     for (i in 0..9) {
         weatherTrackersList.add(
@@ -18,10 +14,6 @@ fun makeStatistic() {
             )
         )
     }
-    takeAverageData(weatherTrackersList)
-}
-
-fun takeAverageData(weatherTrackersList: MutableList<DayWeatherTrackerKS5>) {
     var averageDaytimeTemperature = 0
     var averageNighttimeTemperature = 0
     var rainyDays = 0
@@ -50,23 +42,8 @@ class DayWeatherTrackerKS5(
     var nightTimeTemperature: Int,
     var happenedRain: Boolean = false,
     var atmosphericPressure: Int,
-    var _name: String = "",
-) {
-    init {
-        //   printInfo()
-    }
+)
 
-    private fun printInfo() {
-        println(
-            """
-                Объект $_name: Дневная температура - $dayTimeTemperature
-                Ночная температура - $nightTimeTemperature
-                Дождь - $happenedRain
-                Атмосферное давление - $atmosphericPressure
-                
-                """
-                .trimIndent()
-        )
-    }
-}
+
+
 
