@@ -29,15 +29,13 @@ class Forum {
 
 
     fun newUser(_login: String, _password: String, _mail: String, _bio: String): UserInterface {
-        val userNew = User(_login, _password, _mail, _bio)
-        userNew.id = lastUserId
+        val userNew = User(lastUserId,_login, _password, _mail, _bio)
         lastUserId++
         return userNew
     }
 
     fun newUser(_login: String, _password: String, _mail: String): UserInterface {
-        val userNew = UserSimple(_login, _password, _mail)
-        userNew.id = lastUserId
+        val userNew = UserSimple(lastUserId, _login, _password, _mail)
         lastUserId++
         return userNew
     }
@@ -51,12 +49,10 @@ class Forum {
     fun printThread() {
         historyOfMessages.forEach { println(it) }
     }
-
 }
 
-class UserSimple(var login: String, var password: String, var mail: String) : UserInterface {
+class UserSimple(var id: Int = 0, var login: String, var password: String, var mail: String) : UserInterface {
 
-    var id = 0
     override fun printUserInfo() {
         println("Id = $id, login = $login, password = $password, mail = $mail")
     }
@@ -70,9 +66,8 @@ class UserSimple(var login: String, var password: String, var mail: String) : Us
     }
 }
 
-class User(var login: String, var password: String, var mail: String, var bio: String = "Без описания") :
+class User(var id: Int = 0, var login: String, var password: String, var mail: String, var bio: String = "Без описания") :
     UserInterface {
-    var id = 0
     override fun printUserInfo() {
         println("Id = $id, login = $login, password = $password, mail = $mail, bio = $bio")
     }
@@ -83,23 +78,6 @@ class User(var login: String, var password: String, var mail: String, var bio: S
 
     override fun getUserLogin(): String {
         return login
-    }
-
-    fun passwordChanger() {
-        var passwordWasChanged = false
-        do {
-            println("Введите пароль")
-            if (readln() == password) {
-                println("Введите новый пароль")
-                password = readln()
-                println("Пароль успешно изменён")
-                passwordWasChanged = true
-            } else println("Не верный пароль")
-        } while (!passwordWasChanged)
-    }
-
-    fun printUserText(incomeText: String) {
-        println(incomeText)
     }
 
 }
