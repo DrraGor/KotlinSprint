@@ -2,7 +2,7 @@ package lesson_11
 
 fun main() {
     val forum = Forum()
-    val user1 = forum.newUser("Роман Петров", "qweee", "romanoff@mail.ru")
+    val user1 = forum.newUser("Роман Петров", "qweee", "romanoff@mail.ru","")
     val user2 = forum.newUser("Логинова Ирина", "dlkjfsl", "log12@mail.ru", "Актриса оперы и балета")
 
     user1.printUserInfo()
@@ -27,15 +27,8 @@ class Forum {
     private var lastUserId = 0
     private var historyOfMessages = mutableListOf<String>()
 
-
     fun newUser(_login: String, _password: String, _mail: String, _bio: String): UserInterface {
-        val userNew = User(lastUserId,_login, _password, _mail, _bio)
-        lastUserId++
-        return userNew
-    }
-
-    fun newUser(_login: String, _password: String, _mail: String): UserInterface {
-        val userNew = UserSimple(lastUserId, _login, _password, _mail)
+        val userNew = User(lastUserId, _login, _password, _mail, _bio)
         lastUserId++
         return userNew
     }
@@ -51,22 +44,13 @@ class Forum {
     }
 }
 
-class UserSimple(var id: Int = 0, var login: String, var password: String, var mail: String) : UserInterface {
-
-    override fun printUserInfo() {
-        println("Id = $id, login = $login, password = $password, mail = $mail")
-    }
-
-    override fun getUserId(): Int {
-        return id
-    }
-
-    override fun getUserLogin(): String {
-        return login
-    }
-}
-
-class User(var id: Int = 0, var login: String, var password: String, var mail: String, var bio: String = "Без описания") :
+class User(
+    var id: Int = 0,
+    var login: String,
+    var password: String,
+    var mail: String,
+    var bio: String = "Без описания"
+) :
     UserInterface {
     override fun printUserInfo() {
         println("Id = $id, login = $login, password = $password, mail = $mail, bio = $bio")
