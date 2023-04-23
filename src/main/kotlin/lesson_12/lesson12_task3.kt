@@ -1,9 +1,9 @@
 fun main() {
 
-    val weatherTrackerOne = DayWeatherTracker(19, 10,true, 781)
+    val weatherTrackerOne = DayWeatherTracker(19, 10, true, 781)
     weatherTrackerOne.printInfo("weatherTrackerOne")
 
-    val weatherTrackerTwo = DayWeatherTracker(3,5,false,750)
+    val weatherTrackerTwo = DayWeatherTracker(3, 5, false, 750)
     weatherTrackerTwo.printInfo("weatherTrackerTwo")
 
 }
@@ -17,12 +17,12 @@ class DayWeatherTracker(
 
     fun printInfo(name: String) {
         println(
-            """        
- Объект $name: Дневная температура - $dayTimeTemperature 
-                           Ночная температура - $nightTimeTemperature
-                           Дождь - $happenedRain
-                           Атмосферное давление - $atmosphericPressure        
-        """
+            """
+                Объект $name: Дневная температура - $dayTimeTemperature 
+                Ночная температура - $nightTimeTemperature
+                Дождь - $happenedRain
+                Атмосферное давление - $atmosphericPressure
+                """.trimIndent()
         )
     }
 
