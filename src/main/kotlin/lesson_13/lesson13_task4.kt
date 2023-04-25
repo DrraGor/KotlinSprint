@@ -38,8 +38,9 @@ fun addContact() {
         val company = readlnOrNull()
 
         if (phone != null) contactList.add(PhoneContactLesson4(name, phone, company))
-        else continue
+        else println("Номер телефона не введен, контакт не сохранен.")
         println("Если хотите добавить новую запись, введите \"да\"")
+
 
         if (readLine() != "да") nextContact = false
         else continue
