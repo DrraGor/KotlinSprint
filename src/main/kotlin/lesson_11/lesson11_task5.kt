@@ -28,9 +28,9 @@ class Forum {
     private var historyOfMessages = mutableListOf<String>()
 
     fun newUser(_login: String, _password: String, _mail: String, _bio: String): UserInterface {
-        val userNew = User(lastUserId, _login, _password, _mail, _bio)
+        val user115New = User11(lastUserId, _login, _password, _mail, _bio)
         lastUserId++
-        return userNew
+        return user115New
     }
 
     fun newMessage(authorId: Int, login: String, message: String) {
@@ -44,7 +44,7 @@ class Forum {
     }
 }
 
-class User(
+class User11(
     var id: Int = 0,
     var login: String,
     var password: String,
