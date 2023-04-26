@@ -2,7 +2,7 @@ package lesson_11
 
 fun main() {
 
-    val userOne = User112(7, "Mihail", "ctrhtn", "sdfff@mail.ru")
+    val userOne = User(7, "Mihail", "ctrhtn", "sdfff@mail.ru")
     userOne.addBio()
     userOne.passwordChanger()
     userOne.printUserInfo()
@@ -11,7 +11,7 @@ fun main() {
 
 }
 
-class User112(private val _id: Int, val _login: String, private var _password: String, private val _mail: String, var _bio: String = "") {
+class User(private val _id: Int, val _login: String, private var _password: String, private val _mail: String, var _bio: String = "") {
 
     init {
         println("Пользователь $_login создан")
