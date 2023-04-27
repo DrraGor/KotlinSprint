@@ -1,6 +1,6 @@
 package lesson_14
 
-fun main(){
+fun main() {
     val planet = Planet(
         "Mars",
         true,
@@ -10,39 +10,50 @@ fun main(){
     )
     planet.printName()
 
-    val asteroid = Asteroid("Ceres")
-    asteroid.printName()
-
     val sputnik = Sputnik("Phobos")
     sputnik.printName()
+    val sputnikTwo = Sputnik("Deimos")
+    sputnikTwo.printName()
+
+    val asteroid = Asteroid("Ceres")
+    asteroid.printName()
+}
+
+abstract class AstronomicalObject {
+    abstract val name: String
+    abstract val habitability: Boolean
+    abstract val atmosphere: Boolean
+    abstract val water: Boolean
+    abstract val disembarkation: Boolean
+    abstract fun printName()
 }
 
 open class Planet(
-    private val name: String,
-    private val habitability: Boolean,
-    private val atmosphere: Boolean,
-    private val water: Boolean,
-    private val disembarkation: Boolean,
-) {
+    override val name: String,
+    override val habitability: Boolean,
+    override val atmosphere: Boolean,
+    override val water: Boolean,
+    override val disembarkation: Boolean,
+) : AstronomicalObject() {
 
-    open fun printName() {
+    override fun printName() {
         println(name)
     }
 }
 
 class Asteroid(
-    name: String,
-    habitability: Boolean = false,
-    atmosphere: Boolean = false,
-    water: Boolean = true,
-    disembarkation: Boolean = true,
-) : Planet(
-    name,
-    habitability,
-    atmosphere,
-    water,
-    disembarkation
-)
+
+    override val name: String,
+    override val habitability: Boolean = false,
+    override val atmosphere: Boolean = false,
+    override val water: Boolean = true,
+    override val disembarkation: Boolean = true,
+) : AstronomicalObject() {
+    override fun printName() {
+        println(name)
+    }
+}
+
 
 class Sputnik(
     name: String,
