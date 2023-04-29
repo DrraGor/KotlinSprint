@@ -1,48 +1,42 @@
 package lesson_15
 
 fun main() {
-    val tempMessage = TemperatureMessage()
-    tempMessage.message = "Текущая температура 15 градусов"
+    val tempMessage = TemperatureMessage("Текущая температура 15 градусов")
     tempMessage.connect()
     tempMessage.sendMessage()
-    println(tempMessage.message)
     println()
 
-    val precipMessage = PrecipitationMessage()
-    precipMessage.message = "Осадки не ожидаются"
+    val precipMessage = PrecipitationMessage("Осадки не ожидаются")
     precipMessage.connect()
     precipMessage.sendMessage()
-    println(precipMessage.message)
 }
 
-abstract class BaseMessage {
+abstract class BaseMessage(var message: String) {
+    open fun connect() {
+        println("Подключится к серверу")
+    }
 
-    abstract var message: String
-    abstract fun connect()
     abstract fun sendMessage()
 }
 
-class TemperatureMessage : BaseMessage() {
-    override var message = "Тестовое сообщение"
+class TemperatureMessage(message: String) : BaseMessage(message) {
 
     override fun connect() {
         println("Подключится к серверу")
     }
 
     override fun sendMessage() {
-        println("Отправить сообщение о температуре")
+        println(message)
     }
 }
 
-class PrecipitationMessage : BaseMessage() {
-    override var message = "Тестовое сообщение"
-
+class PrecipitationMessage(message: String) : BaseMessage(message) {
     override fun connect() {
         println("Подключится к серверу")
     }
 
     override fun sendMessage() {
-        println("Отправить сообщение об осадках")
+        println(message)
     }
 }
 
