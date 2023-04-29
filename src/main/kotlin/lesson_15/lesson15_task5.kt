@@ -16,6 +16,7 @@ fun main() {
     val gaz = CargoCar("Газ")
     gaz.startTransportation(gaz.name)
     gaz.startCargoTransportation(1000)
+
 }
 
 abstract class Car {
