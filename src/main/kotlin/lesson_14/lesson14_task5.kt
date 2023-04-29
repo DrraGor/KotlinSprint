@@ -3,24 +3,29 @@ package lesson_14
 import kotlin.math.PI
 import kotlin.math.sqrt
 
+const val RED = "red"
+const val GREEN = "black"
+const val BLACK = "green"
+
 fun main() {
-    val figuresList = mutableListOf(
-        Circle("red", 3),
-        Circle("black", 7),
-        Rectangle("green", 4, 3),
-        Rectangle("black", 8, 5),
-        Triangle("red", 7, 5, 10),
-        Triangle("green", 12, 8, 8)
+    val figuresList = listOf(
+        Circle(RED, 3),
+        Circle(BLACK, 7),
+        Rectangle(GREEN, 4, 3),
+        Rectangle(BLACK, 8, 5),
+        Triangle(RED, 7, 5, 10),
+        Triangle(GREEN, 12, 8, 8)
     )
-    redPerimeters(figuresList)
-    redSquare(figuresList)
+    calculateRedFigurePerimeters(figuresList)
+    calculateRedFigureSquares(figuresList)
+
 
 }
 
-fun redPerimeters(figures: MutableList<Figure>) {
+fun calculateRedFigurePerimeters(figures: List<Figure>) {
     var redPer = 0.0
     for (i in figures) {
-        if (i.color == "red") {
+        if (i.color == RED) {
             redPer += i.perimeter()
         } else continue
     }
@@ -28,10 +33,10 @@ fun redPerimeters(figures: MutableList<Figure>) {
 
 }
 
-fun redSquare(figures: MutableList<Figure>) {
+fun calculateRedFigureSquares(figures: List<Figure>) {
     var redSquare = 0.0
     for (i in figures) {
-        if (i.color == "red") {
+        if (i.color == RED) {
             redSquare += i.square()
 
         } else continue
@@ -40,16 +45,10 @@ fun redSquare(figures: MutableList<Figure>) {
 }
 
 abstract class Figure {
+
     abstract val color: String
-
-    open fun square(): Double {
-
-        return TODO("Provide the return value")
-    }
-
-    open fun perimeter(): Double {
-        return TODO("Provide the return value")
-    }
+    abstract fun square(): Double
+    abstract fun perimeter(): Double
 }
 
 class Circle(
@@ -67,7 +66,6 @@ class Circle(
         return 2 * PI * radius.toDouble()
     }
 }
-
 class Rectangle
     (
     override val color: String,
