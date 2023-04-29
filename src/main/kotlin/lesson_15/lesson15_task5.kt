@@ -2,14 +2,20 @@ package lesson_15
 
 fun main() {
     val kamaz = CargoCar("Камаз")
-    kamaz.startCargoTransportation(1000, 1)
+    kamaz.startTransportation(kamaz.name)
+    kamaz.startCargoTransportation(1000)
+    println()
     val volga = PassengerCar("Волга")
+    volga.startTransportation(volga.name)
     volga.startPassengerTransportation(2)
+    println()
     val moskvich = PassengerCar("Москвич")
+    moskvich.startTransportation(moskvich.name)
     moskvich.startPassengerTransportation(3)
+    println()
     val gaz = CargoCar("Газ")
-    gaz.startCargoTransportation(1000, 0)
-
+    gaz.startTransportation(gaz.name)
+    gaz.startCargoTransportation(1000)
 }
 
 abstract class Car {
@@ -17,9 +23,16 @@ abstract class Car {
 
 }
 
+interface Movable {
+    fun startTransportation(name: String) {
+        println("Движение $name начато")
+    }
+
+}
+
 interface CargoTransportation {
-    fun startCargoTransportation(loadCargoCapacity: Int, loadPassengerCapacity: Int) {
-        println("Перевезено $loadCargoCapacity килограмм груза и $loadPassengerCapacity пассажиров")
+    fun startCargoTransportation(loadCargoCapacity: Int) {
+        println("Перевезено $loadCargoCapacity килограмм груза")
     }
 }
 
@@ -29,6 +42,6 @@ interface PassengerTransportation {
     }
 }
 
-class CargoCar(override val name: String) : Car(), CargoTransportation
+class CargoCar(override val name: String) : Car(), Movable, CargoTransportation, PassengerTransportation
 
-class PassengerCar(override val name: String) : Car(), PassengerTransportation
+class PassengerCar(override val name: String) : Car(), Movable, PassengerTransportation
