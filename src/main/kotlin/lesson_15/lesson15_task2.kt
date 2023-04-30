@@ -15,28 +15,11 @@ abstract class BaseMessage(var message: String) {
     open fun connect() {
         println("Подключится к серверу")
     }
-
-    abstract fun sendMessage()
-}
-
-class TemperatureMessage(message: String) : BaseMessage(message) {
-
-    override fun connect() {
-        println("Подключится к серверу")
-    }
-
-    override fun sendMessage() {
+    open fun sendMessage() {
         println(message)
     }
 }
+class TemperatureMessage(message: String) : BaseMessage(message)
 
-class PrecipitationMessage(message: String) : BaseMessage(message) {
-    override fun connect() {
-        println("Подключится к серверу")
-    }
-
-    override fun sendMessage() {
-        println(message)
-    }
-}
+class PrecipitationMessage(message: String) : BaseMessage(message)
 
