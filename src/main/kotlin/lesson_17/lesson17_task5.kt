@@ -5,7 +5,6 @@ fun main() {
     user.password = "не секретно"
     println(user.password)
     user.login = "Аркадий"
-
 }
 
 class SomeUser(private val _login: String, private val _password: String) {
