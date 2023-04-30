@@ -7,10 +7,11 @@ fun main() {
     strings.search()
 
 }
+abstract class Product(val title: String, val quantity: Int)
 
-class MusicalInstrument(val title: String, val quantity: Int) : Searchable
+class MusicalInstrument(title: String, quantity: Int) : Product(title, quantity), Searchable
 
-class MusicalParts(val title: String, val quantity: Int) : Searchable
+class MusicalParts(title: String, quantity: Int) : Product(title, quantity), Searchable
 
 interface Searchable {
     fun search() {
