@@ -1,7 +1,8 @@
 package lesson_13
-class Contact(
+class Contact2(
     val name: String,
     val phone: Int,
     val company: String?,
 )
+
 
