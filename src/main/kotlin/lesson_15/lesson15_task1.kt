@@ -51,7 +51,7 @@ interface Floating {
     }
 }
 
-interface Movable {
+interface Movablee {
 
     fun startWalk() {
         println("Начать движение")
@@ -95,7 +95,7 @@ class Crucian : Floating {
 
 }
 
-class Duck : Floating, Flyable, Movable {
+class Duck : Floating, Flyable, Movablee {
 
     override fun startFly() {
         println("Взлететь")
@@ -130,7 +130,7 @@ class Duck : Floating, Flyable, Movable {
     }
 }
 
-class Seagull : Flyable, Movable, Floating {
+class Seagull : Flyable, Movablee, Floating {
 
     override fun startFly() {
         println("Взлететь")
