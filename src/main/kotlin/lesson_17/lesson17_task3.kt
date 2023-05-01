@@ -9,14 +9,7 @@ fun main() {
 
 class Folder(_name: String, val quantity: Int,  var isSecretFlag: Boolean) {
 
-    val name = _name
-        get() {
-            return if (isSecretFlag) {
-                "скрытая папка"
-            } else {
-                field
-            }
-        }
-
+    var name = _name
+        get() = if (isSecretFlag) "скрытая папка" else field
 
 }
