@@ -17,9 +17,7 @@ class Parcel(val number: Int, _location: String) {
         }
     var location = _location
         set(value) {
-            if (value != field) {
-                forwarding += 1
-            }
+            if (value != field) forwarding++
             field = value
         }
 
