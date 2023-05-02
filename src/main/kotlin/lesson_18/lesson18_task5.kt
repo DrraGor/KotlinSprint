@@ -15,10 +15,7 @@ fun main() {
     screen.draw(dot, 50.2f, 130)
     screen.draw(dot, 300, 40.5f)
 }
-
-abstract class AbstractFigure(val name: String) {
-
-}
+abstract class AbstractFigure(val name: String)
 
 class Circle18(name: String) : AbstractFigure(name)
 class Dot18(name: String) : AbstractFigure(name)
