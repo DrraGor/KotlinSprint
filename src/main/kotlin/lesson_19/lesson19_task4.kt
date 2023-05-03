@@ -9,11 +9,10 @@ fun main() {
     tank.fire()
     tank.loadTheGun(Ammunition.RED)
     tank.fire()
-
 }
 
 
-enum class Ammunition() {
+enum class Ammunition {
     RED,
     BLUE,
     GREEN,
@@ -27,8 +26,8 @@ fun defineAmmunitionDamage(ammunition: Ammunition): Int {
     }
 }
 
-class Tank() {
-    var currentAmmunition = 0
+class Tank {
+    private var currentAmmunition = 0
 
     fun loadTheGun(ammunition: Ammunition) {
         currentAmmunition = defineAmmunitionDamage(ammunition)
