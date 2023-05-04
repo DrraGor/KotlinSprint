@@ -11,26 +11,17 @@ fun main() {
     tank.fire()
 }
 
-
-enum class Ammunition {
-    RED,
-    BLUE,
-    GREEN,
-}
-
-fun defineAmmunitionDamage(ammunition: Ammunition): Int {
-    return when (ammunition) {
-        Ammunition.RED -> 20
-        Ammunition.GREEN -> 10
-        Ammunition.BLUE -> 5
-    }
+enum class Ammunition(val damage: Int) {
+    RED(20),
+    BLUE(5),
+    GREEN(10),
 }
 
 class Tank {
     private var currentAmmunition = 0
 
     fun loadTheGun(ammunition: Ammunition) {
-        currentAmmunition = defineAmmunitionDamage(ammunition)
+        currentAmmunition = ammunition.damage
         println("Орудие заряжено боеприпасом \"${ammunition.name}\"")
     }
 
