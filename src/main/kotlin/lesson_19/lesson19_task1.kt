@@ -1,4 +1,4 @@
-package lesson_20
+package lesson_19
 
 fun main() {
     println("Вы можете добавить следующих рыб:")
