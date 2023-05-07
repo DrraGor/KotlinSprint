@@ -5,7 +5,6 @@ fun main() {
     val robot = RobotLesson20()
     println(robot.say())
     robot.setModifier { println(robot.say().reversed()) }
-
 }
 
 class RobotLesson20() {
