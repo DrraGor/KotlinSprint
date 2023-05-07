@@ -1,6 +1,5 @@
 package lesson_20
 
-
 fun main() {
     val robot = RobotLesson20()
     println(robot.say())
