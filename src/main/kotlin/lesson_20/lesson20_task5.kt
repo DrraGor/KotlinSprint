@@ -6,7 +6,7 @@ fun main() {
     robot.setModifier { println(robot.say().reversed()) }
 }
 
-class RobotLesson20() {
+class RobotLesson20 {
 
     private val phrasesList = listOf(
         "Приветствую тебя человек, я робот помощник",
